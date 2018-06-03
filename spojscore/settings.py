@@ -12,7 +12,7 @@ DATABASES = {
     )
 }
 
-ALLOWED_HOSTS = ['spojscore.herokuapp.com']
+ALLOWED_HOSTS = ['spojscore.herokuapp.com', 'spojscore.alfarhanzahedi.com']
 
 INSTALLED_APPS = [
     'core',
