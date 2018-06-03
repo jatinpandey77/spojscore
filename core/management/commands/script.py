@@ -14,6 +14,7 @@ class Command(BaseCommand):
         problem_score = 0.0
         problem_users = 0
         while count != 3650:
+            self.stdout.write('\nScraping problem details for problem %d to %d' %(count + 1, count + 50))
             url = "http://www.spoj.com/problems/classical/sort=6,start=" + str(count)
             headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', 'cookie':'inweb_city=Kolkata;'}
             res = requests.get(url, headers = headers)
