@@ -38,7 +38,7 @@
             <tbody>
                 {% for problem in problems %}
                 <tr>
-                    <td> {{problem.name}} </td>
+                    <td><a href="http://spoj.com/problems/{{problem.code}}" target="_blank"> {{problem.name}} </a></td>
                     <td> {{problem.code}} </td>
                     <td> {{problem.users}} </td>
                     <td> {{problem.score}} </td>
