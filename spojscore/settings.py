@@ -1,8 +1,16 @@
 import os
+import dj_database_url
+from decouple import config
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = '6)hkcrbzfd9u(80!7==pit8q79-3z9khu8ioec0%fuq*&%z*bc'
-DEBUG = True
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=True, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
 ALLOWED_HOSTS = []
 
@@ -46,12 +54,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'spojscore.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
