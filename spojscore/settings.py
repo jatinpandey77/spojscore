@@ -12,7 +12,7 @@ DATABASES = {
     )
 }
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['spojscore.herokuapp.com']
 
 INSTALLED_APPS = [
     'core',
